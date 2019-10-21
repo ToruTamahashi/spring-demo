@@ -12,14 +12,14 @@
     <div>
         <h1>AjaxでHTTP通信を行う（超シンプルバージョン）</h1>
         <p><input type="button" id="ajax-button" value="click" /></p><br />
-        <a href="http://localhost:8080/aj">link!!!</a>
+
     </div>
 
 
     <!-- スクリプト部分 -->
     <script type="text/javascript">
-        $( function() {
-
+       // $( function() {
+        window.onload = function () {
             $( '#ajax-button' ) .click(
                 function() {
 
@@ -42,7 +42,7 @@
                         alert("error");
                     })
                 });
-        } );
+        } ;
     </script>
 </body>
 </html>
