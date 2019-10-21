@@ -6,6 +6,34 @@
     <title>>AjaxでHTTP通信を行う</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript" ></script>
 
+    <!-- スクリプト部分 -->
+    <script type="text/javascript">
+        // $( function() {
+        console.log("tfkuytg")
+        window.addEventListener('DOMContentLoaded',  function () {
+            $('#ajax-button' ) .click(function() {
+
+                var hostUrl= './api/v1/tickets/';
+                var param1 = 100;
+                var param2 = 200;
+                $.ajax({
+                    url: hostUrl,
+                    type:'POST',
+                    dataType: 'json',
+                    data : {parameter1 : param1, parameter2 : param2 },
+                    timeout:10000,
+                }).done(function(data) {
+                    var p = $('<h2>').text('vanish!').addClass('vanish');
+                    $('h1').after(p);
+                    console.log(data);
+                    //alert("ok");
+
+                }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("error");
+                })
+            });
+        }) ;
+    </script>
 </head>
 <body>
 
@@ -16,33 +44,6 @@
     </div>
 
 
-    <!-- スクリプト部分 -->
-    <script type="text/javascript">
-       // $( function() {
-       console.log("tfkuytg")
-        window.addEventListener('DOMContentLoaded',  function () {
-            $( '#ajax-button' ) .click(function() {
 
-                    var hostUrl= './api/v1/tickets/';
-                    var param1 = 100;
-                    var param2 = 200;
-                    $.ajax({
-                        url: hostUrl,
-                        type:'POST',
-                        dataType: 'json',
-                        data : {parameter1 : param1, parameter2 : param2 },
-                        timeout:10000,
-                    }).done(function(data) {
-                        var p = $('<h2>').text('vanish!').addClass('vanish');
-                        $('h1').after(p);
-                        console.log(data);
-                        //alert("ok");
-
-                    }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
-                        alert("error");
-                    })
-                });
-        }) ;
-    </script>
 </body>
 </html>
