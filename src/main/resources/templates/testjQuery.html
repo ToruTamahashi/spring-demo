@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>はじめてのjQuery</title>
+    <link  th:href="@{/css/test.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <p>jQueryの練習</p>
+    <input type="text">
+    <!--表を作るタグ-->
+    <!--ul:列 li:行 -->
+
+    <h1>ててて</h1>
+    <h2>かかか</h2>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <select id="members" name="mem">
+        <option>taguchi</option>
+        <option>fukuji</option>
+        <option>dot</option>
+    </select>
+
+    <h3>------------------------</h3>
+    <button>add</button>
+
+    <script  src=https://code.jquery.com/jquery-1.10.1.min.js></script>
+    <script>
+    $(function(){
+        //$('p').css('color', 'red').hide('slow');
+        //$('p').css('color', 'red');
+        //$("#sub").css('color','red');
+
+        //$('p').text('just changed');
+        $('p').html('<a href="http://google.com">click me!</a>');
+        <!-- 値の変更 -->
+        $('input').val('hello!world!');
+
+        //要素の追加　
+        var li = $('<li>').text('add');
+        $('ul > li:eq(1)').prepend(li);
+
+        //クリックされたらアラート
+        $('h1').click(function () {
+           alert("hi!");
+        });
+
+        //selectボックスの値が変更されたら　
+        $('#members').change(function () {
+            alert("changed!");
+        })
+
+        //要素の追加
+        $('button').click(function () {
+            var p = $('<p>').text('vanish!').addClass('vanish');
+            $(this).before(p);
+        })
+        //追加した要素の削除
+        $('body').on('click', '.vanish', function () {
+            $(this).remove();
+        })
+    });
+    </script>
+</body>
+</html>

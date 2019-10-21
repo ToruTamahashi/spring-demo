@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+//@RequestMapping("categories/{category_id}")
 public class indexController {
     @RequestMapping("/")
     public String showTopPage(){
@@ -27,4 +28,16 @@ public class indexController {
         // 遷移先を返す(この場合はconfirm.htmlが遷移先となる)
         return "confirm";
     }
+
+    @RequestMapping("/jq")
+    public String showjQuery(){
+        return "testjQuery";
+    }
+
+
+    @RequestMapping("/top")
+    public String hello() {
+        return "top";
+    }
+
 }

@@ -8,9 +8,41 @@
 <form action="#" th:action="@{/confirm}" th:object="${message}" method="post">
     <div>
         <p>メッセージを入力してください。</p>
-        <input type="text" class="form-control" th:field="*{text}" />
-        <button type="submit" class="btn btn-default">確認</button>
+        <input id="target" type="text" class="form-control" th:field="*{text}" />
+        <button id="bttn" type="submit" class="btn btn-default">確認</button>
     </div>
 </form>
+
+<script language="JavaScript">
+    //document.cookie = 'name=太郎';//name:cookieの名前,太郎:付与する値
+
+    //document.getElementById( "target" ).value = "SYNCER" ;
+    var cookies = document.cookie;
+    //データを1つずつに分ける
+    var cookies_split = cookies.split(';');
+    //最終的にinputボックスに入る値
+    var value
+    //cookieを取得
+    console.log(cookies_split.length);
+    for (var i = 0; i < cookies_split.length; i++) {
+        //cookie名と値に分ける
+        var content = cookies_split[i].split('=');
+        console.log( "name = "+content[0] );
+        console.log( "value = "+content[1] );
+        if (content[0] == " msg"){
+            value = content[1];
+            console.log("aaa");
+            break;
+        }
+    }
+    console.log("value2"+value);
+    document.getElementById("target").value = value;
+    document.getElementById("bttn").onclick = function () {
+        //cookieを削除
+        document.cookie = "msg=;";
+        //cookieを作成
+        document.cookie = "msg="+document.getElementById( "target" ).value;
+    }
+</script>
 </body>
 </html>
