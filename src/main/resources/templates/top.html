@@ -21,8 +21,8 @@
     <script type="text/javascript">
         // $( function() {
         console.log("tfkuytg")
-        window.addEventListener('DOMContentLoaded',  function () {
-            $('#ajax-button' ) .click(function() {
+        window.onload = function () {
+            $('#ajax-button' ).click(function() {
 
                 var hostUrl= './api/v1/tickets/';
                 var param1 = 100;
@@ -43,7 +43,7 @@
                     alert("error");
                 })
             });
-        }) ;
+        } ;
     </script>
 </body>
 </html>
