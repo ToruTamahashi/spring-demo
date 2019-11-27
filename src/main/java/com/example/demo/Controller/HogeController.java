@@ -22,8 +22,7 @@ public class HogeController {
     }
 
     @RequestMapping(value="/v1/tickets", method = RequestMethod.POST)
-    public Map<String, String> post(
-            HttpServletRequest request) {
+    public Map<String, String> post(HttpServletRequest request) {
         Map<String, String> map = new HashMap<>();
         map.put("parameter1", request.getParameter("parameter1")+"abc");
         map.put("parameter2", request.getParameter("parameter2")+"def");

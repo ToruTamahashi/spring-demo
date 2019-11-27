@@ -40,4 +40,11 @@ public class indexController {
         return "top";
     }
 
+    @RequestMapping("/scroll")
+    public String scroll() {
+        return "scrollspy";
+    }
+
+
+
 }
