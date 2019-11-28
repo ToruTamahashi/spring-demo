@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p th:text="'テスト：' + ${dataList.get(0).getMailAddress()}"/>
+
+
+    <table border="1">
+        <th>index</th>
+        <th>id</th>
+        <th>name</th>
+        <th>mail</th>
+
+        <div th:each="data,dataStat: ${dataList}">
+            <tr>
+                <td th:text="${dataStat.index}"/></td>
+                <td th:text="${data.getId()}"/></td>
+                <td th:text="${data.getUserName()}"/></td>
+                <td th:text="${data.getMailAddress()}"/></td>
+            </tr>
+        </div>
+    </table>
+
+        <!--
+        <tr th:each="data,dataStat: ${dataList}">
+            <ul>
+                <li th:text="${data.id}"/></td>
+                <li th:text="${dataStat.index}"/></td>
+                <li th:text="${data.getMailAddress()}"/></td>
+            </ul>
+        </tr>
+        -->
+</body>
+</html>

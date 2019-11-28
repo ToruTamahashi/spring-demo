@@ -6,6 +6,7 @@ import com.example.demo.model.MUsersEntity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,11 +37,8 @@ public class dbController {
         //Optional<MUsersEntity> fB = mUsersService.findBy(5);
         //MUsersEntity info = fB.get();
 
-
         return infoList.get(0).getMailAddress();
     }
 
-    //public List<MUsersEntity> getTableList(){
-    //return mUsersRepository.findAll();
-    //}
+
 }
